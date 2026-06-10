@@ -1,0 +1,12 @@
+lsblk
+sudo mkfs.xfs /dev/nvme1n1
+sudo mkdir /data
+sudo mount /dev/nvme1n1 /data
+df -h
+echo "AWS Project 2 - EBS Storage Lab" | sudo tee /data/project2.txt
+cat /data/project2.txt
+sudo blkid
+sudo cp /etc/fstab /etc/fstab.bak
+sudo nano /etc/fstab
+sudo mount -a
+lsblk -f
